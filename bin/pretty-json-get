@@ -1,0 +1,17 @@
+#!/bin/sh
+
+PRETTY_PRINT="cat"
+
+if [ -t 1 -a $(tput colors) -ge "0" ]; then
+    if [ -n "$(type -t jq)" ]; then
+        PRETTY_PRINT="jq ."
+    elif [ -n "$(type -t underscore)" ]; then
+        PRETTY_PRINT="underscore pretty"
+    elif [ -n "$(type -t json_pp)" ]; then
+        PRETTY_PRINT="json_pp"
+    fi
+elif [ -n "$(type -t underscore)" ]; then
+        PRETTY_PRINT="underscore print"
+fi
+
+curl -s $1 | $PRETTY_PRINT

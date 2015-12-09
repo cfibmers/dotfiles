@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uaac target uaa.10.244.0.34.xip.io
+uaac token client get admin -s admin-secret
+uaac client update admin --authorities "password.write clients.write clients.read scim.read uaa.admin clients.secret scim.write"
+uaac token delete --all
+
+uaac token client get admin -s admin-secret
+cf auth admin admin
+cf create-user $1 $2
+uaac token delete --all

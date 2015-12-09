@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export PGPASSWORD=admin
+psql -h 10.244.0.30 -U ccadmin -w -p 5524 ccdb
+

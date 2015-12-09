@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'json'
+require "nats/client"
+
+messages = []
+NATS.start(:uri => 'nats://nats:nats@10.244.0.6:4222', :autostart => true) do
+    inbox = NATS.create_inbox
+    sub_id = NATS.subscribe(inbox) do |message, _, sub| 
+        messages << Yajl::Parser.parse(message)
+    end
+    NATS.timeout(sub_id, 1, :expected => 1024) { NATS.stop }
+    NATS.publish('vcap.component.discover', '', inbox)
+end
+
+# type: "login",
+# host: "10.244.0.134:8080",
+# index: 0,
+# uuid: "0-cb7ecd78-30af-4e8f-b824-78f34047c5d5",
+# credentials: ["24098-17418-3178-2618", "4143-5731-26033-26391"]
+messages.each do |msg|
+    url = 'http://'
+    url << msg['credentials'][0] << ':' << msg['credentials'][1]
+    url << '@'
+    url << msg['host']
+    url << '/varz'
+
+    puts url
+end

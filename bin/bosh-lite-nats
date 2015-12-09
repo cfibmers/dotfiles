@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'rubygems'
+require 'nats/client'
+
+def command_available?(cmd)
+    `command -v #{cmd} >/dev/null 2>&1`
+    $?.success?
+end
+
+def decorate(subject, msg)
+    $i=0 unless $i
+    $i += 1
+
+    if command_available?("jq") && $stdout.tty?
+        puts `echo '[{\"nats:idx\": \"#{$i}\", \"nats:subject\": \"#{subject}\"}, #{msg}]' | jq -C '.[0]+.[1]'`
+    else
+        puts msg
+    end
+end
+
+['TERM', 'INT'].each { |s| trap(s) {  puts; exit! } }
+
+nats_server = "nats://nats:nats@10.244.0.6:4222"
+subject = ARGV.dup.shift || '>'
+
+NATS.on_error { |err| puts "Server Error: #{err}"; exit! }
+
+NATS.start(:uri => nats_server, :autostart => true) do
+  puts "Listening on [#{subject}]" unless $show_raw
+  NATS.subscribe(subject) { |msg, _, sub| decorate(sub, msg) }
+end
+

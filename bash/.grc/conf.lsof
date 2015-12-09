@@ -1,0 +1,7 @@
+#configuration file for lsof
+regexp=^.*\d*w\s.*[^pipe]$
+colours=green
+======
+regexp=^.*jar.*$
+colours=yellow
+

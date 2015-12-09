@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'json'
+require "nats/client"
+
+def command_available?(cmd)
+    `command -v #{cmd} >/dev/null 2>&1`
+    $?.success?
+end
+
+messages = []
+NATS.start(:uri => 'nats://nats:nats@10.244.0.6:4222', :autostart => true) do
+    inbox = NATS.create_inbox
+    sub_id = NATS.subscribe(inbox) do |message, _, sub| 
+        messages << Yajl::Parser.parse(message)
+    end
+    NATS.timeout(sub_id, 1, :expected => 1024) { NATS.stop }
+    NATS.publish('vcap.component.discover', '', inbox)
+end
+
+messages.each do |msg|
+    if command_available?("jq") && $stdout.tty?
+        puts `echo '#{msg.to_json}' | jq -C .`
+    else
+        puts JSON.pretty_generate(msg)
+    end
+end

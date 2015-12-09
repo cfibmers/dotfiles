@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+PRETTY_PRINT="cat"
+if [ -t 1 -a $(tput colors) -ge "0" ]; then
+    if [ -n "$(type -t jq)" ]; then
+        PRETTY_PRINT="jq ."
+    elif [ -n "$(type -t underscore)" ]; then
+        PRETTY_PRINT="underscore pretty"
+    elif [ -n "$(type -t json_pp)" ]; then
+        PRETTY_PRINT="json_pp"
+    fi
+elif [ -n "$(type -t underscore)" ]; then
+        PRETTY_PRINT="underscore print"
+fi
+
+if [ $# -ge 1 ]; then
+	if [[ "$1" == http* ]]; then
+	    INPUT="curl --silent \"$1\""
+	elif [ -f "$1" ]; then
+		INPUT="cat \"$1\""
+	fi
+else
+    INPUT="cat -"
+fi
+
+eval "$INPUT" | $PRETTY_PRINT

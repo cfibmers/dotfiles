@@ -1,0 +1,26 @@
+[user]
+	name = Anonymous Coward
+	email = anonymous@coward.example.com
+[alias]
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	llog = log --date=local
+	flog = log --pretty=fuller --decorate
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lol = log --graph --decorate --oneline
+	lola = log --graph --decorate --oneline --all
+	ci = duet-commit
+	co = checkout
+[color]
+    ui = true
+[color "diff"]
+    frag = magenta
+    func = cyan
+    meta = blue
+    new = green
+    old = red
+[push]
+	default = simple
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
+[core]
+	excludesfile = ~/.gitignore_global

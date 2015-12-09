@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+# CF_TRACE=true cf curl -X POST -H "Content-Type: application/json" -d '{"name":"beta","non_basic_services_allowed":true,"total_services":15,"total_routes":300,"memory_limit":4096,"trial_db_allowed":true}' /v2/quota_definitions 
+
+cf logout
+cf api --skip-ssl-validation api.10.244.0.34.xip.io
+cf auth admin admin
+cf create-org o
+cf target -o o
+cf create-space -o o s
+cf target -o o -s s

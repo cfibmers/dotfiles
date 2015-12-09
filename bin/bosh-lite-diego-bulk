@@ -1,0 +1,6 @@
+#!/bin/bash
+
+user="internal_user"
+password="internal-password"
+
+json http://$user:$password@api.10.244.0.34.xip.io/internal/bulk/apps?batch_size=1000\&format=fingerprint\&token=\\{\\}
