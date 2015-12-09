@@ -10,19 +10,17 @@ apps=(
     ant
     archey
     aria2
-    asciinema
+    asciinema --force-bottle
     automake
     bash-completion
     bats
     bazaar
     brew-cask
-    caddy
     cloudfoundry-cli
     coreutils
     ctags
-    direnv
+    direnv --force-bottle
     dnsmasq
-    fig
     git
     git-duet
     gnu-tar
@@ -31,7 +29,7 @@ apps=(
     grep --with-default-names
     go14 --with-cc-common
     htop-osx
-    hugo
+    hugo --force-bottle
     iftop
     iperf
     jq
@@ -47,7 +45,7 @@ apps=(
     node --without-completion
     openssl
     p7zip
-    packer
+    packer --force-bottle
     pigz
     postgresql
     protobuf
