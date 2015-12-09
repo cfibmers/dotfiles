@@ -1,6 +1,6 @@
 #!/bin/sh
 
-uaac target uaa.10.244.0.34.xip.io
+uaac target uaa.bosh-lite.com
 uaac token client get admin -s admin-secret
 uaac client update admin --authorities "password.write clients.write clients.read scim.read uaa.admin clients.secret scim.write"
 uaac token delete --all
