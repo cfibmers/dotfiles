@@ -50,6 +50,24 @@ defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
+# Mouse: faster tracking and right click
+defaults write -g com.apple.mouse.scaling 2.5
+defaults write com.apple.AppleMultitouchMouse MouseButtonMode -string "TwoButton"
+defaults write com.apple.AppleMultitouchMouse MouseHorizontalScroll -int 1
+defaults write com.apple.AppleMultitouchMouse MouseVerticalScroll -int 1
+defaults write com.apple.AppleMultitouchMouse MouseOneFingerDoubleTapGesture -int 0
+defaults write com.apple.AppleMultitouchMouse MouseTwoFingerDoubleTapGesture -int 3
+defaults write com.apple.AppleMultitouchMouse MouseTwoFingerHorizSwipeGesture -int 2
+
+# Mouse: faster tracking and right click
+defaults write -g com.apple.mouse.scaling 2.5
+defaults write com.apple.driver.AppleBluetoothMultitouchMouse MouseButtonMode -string "TwoButton"
+defaults write com.apple.driver.AppleBluetoothMultitouchMouse MouseHorizontalScroll -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouchMouse MouseVerticalScroll -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouchMouse MouseOneFingerDoubleTapGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouchMouse MouseTwoFingerDoubleTapGesture -int 3
+defaults write com.apple.driver.AppleBluetoothMultitouchMouse MouseTwoFingerHorizSwipeGesture -int 2
+
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
