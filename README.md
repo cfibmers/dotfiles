@@ -12,7 +12,7 @@ On a sparkling fresh installation of OS X:
 ### Clone with Git
 
     git clone https://github.com/cfibmers/dotfiles.git
-    dotfiles/install.sh
+    HOSTNAME=*${desired-host-name}* dotfiles/install.sh
     reboot
 
 ### Post-install
