@@ -10,6 +10,12 @@ let g:go_highlight_build_constraints = 1
 let g:go_snippet_engine = "neosnippet"
 let g:go_bin_path = expand("~/.gotools")
 
+if has("unix")
+  let $PATH = g:go_bin_path . ':' . $PATH
+else
+  let $PATH = g:go_bin_path . ';' . $PATH
+endif
+
 function! golang#generate_project()
   call system('find . -iname "*.go" > /tmp/gotags-filelist-project')
   let gopath = substitute(system('go env GOPATH'), '\n', '', '')
