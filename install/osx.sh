@@ -14,7 +14,7 @@ brew tap homebrew/binary
 brew tap homebrew/completions
 brew tap homebrew/dupes
 brew tap homebrew/versions
-brew tap pivotal/tap
+brew tap cloudfoundry/tap
 
 brew install brew-cask
 

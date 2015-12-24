@@ -16,7 +16,7 @@ apps=(
     bats
     bazaar
     brew-cask
-    cloudfoundry-cli
+    cf-cli
     coreutils
     ctags
     direnv --force-bottle
