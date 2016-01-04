@@ -24,6 +24,7 @@ apps=(
     git
     git-duet
     gnu-tar
+    google-chrome
     gradle
     grc
     grep --with-default-names
