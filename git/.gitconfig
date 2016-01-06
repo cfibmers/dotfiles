@@ -20,6 +20,7 @@
     old = red
 [push]
 	default = simple
+	recurseSubmodules = on-demand
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
 [core]
