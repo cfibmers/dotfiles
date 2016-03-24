@@ -143,12 +143,12 @@ set backup                             " keep a backup file (restore to previous
 set cursorline                         " highlight the current line
 set clipboard=unnamed                  " yank to and paste from the system clipboard by default
 set complete-=i                        " don't search included files for completion
+set completeopt-=preview               " disable preview window on completion
 set display+=lastline                  " display as much as possible of the last line
 set expandtab                          " use spaces instead of tabs in insert mode
 set foldmethod=syntax                  " syntax highlighting items specify folds
 set foldlevel=20                       " folds with a higher level than this will be closed
 set formatoptions+=r                   " insert the comment leader after enter in insert mode
-"set guioptions+=a                      " autoselect for copy/paste
 set guioptions+=c                      " use console dialogs instead of popups
 set guioptions-=L                      " remove left scrollbar
 set guioptions-=r                      " remove right scrollbar
