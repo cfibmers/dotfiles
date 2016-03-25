@@ -17,6 +17,7 @@ NeoBundle 'kien/ctrlp.vim'                       " fuzzy file open
 NeoBundle 'scrooloose/nerdtree'                  " filesystem navigation
 NeoBundle 'majutsushi/tagbar'                    " code tree
 NeoBundle 'bling/vim-airline'                    " improved status bar
+NeoBundle 'vim-airline/vim-airline-themes'       " color schemes for vim-airline
 NeoBundle 'mhinz/vim-signify'                    " line markers
 NeoBundle 'mbbill/undotree'                      " undo history as tree
 NeoBundle 'scrooloose/syntastic'                 " syntax checking
