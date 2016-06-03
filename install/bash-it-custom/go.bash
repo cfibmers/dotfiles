@@ -1,3 +1,1 @@
-if [[ ! ":$GOPATH:" == *":$HOME/go:"* ]]; then
-    export GOPATH="$HOME/go:$GOPATH"
-fi
+export GOPATH=${GOPATH:-$HOME/go}
