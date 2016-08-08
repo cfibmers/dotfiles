@@ -17,22 +17,25 @@ apps=(
     bazaar
     brew-cask
     cf-cli
+    consul
     coreutils
     ctags
     direnv --force-bottle
     dnsmasq
+    docker-machine-driver-xhyve
     git
     git-duet
     gnu-tar
     gradle
     grc
     grep --with-default-names
-    go14 --with-cc-common
+    go --with-cc-common
     htop-osx
     hugo --force-bottle
     iftop
     iperf
     jq
+    kubernetes-cli
     lftp
     libtool
     lua

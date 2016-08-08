@@ -13,6 +13,7 @@ apps=(
     iterm2
     java
     macvim
+    minikube
     ngrok
     # rubymine
     screenhero
