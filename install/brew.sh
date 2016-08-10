@@ -1,3 +1,4 @@
+#!/bin/bash
 # Update Homebrew, formulae, and packages
 
 brew update
@@ -22,7 +23,7 @@ apps=(
     ctags
     direnv --force-bottle
     dnsmasq
-    docker-machine-driver-xhyve
+    docker-machine-driver-xhyve --without-docker-machine
     git
     git-duet
     gnu-tar
@@ -74,3 +75,6 @@ apps=(
 )
 
 brew install "${apps[@]}"
+
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
