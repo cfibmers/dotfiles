@@ -2,7 +2,7 @@ apps=(
     atom
     # colloquy
     consul
-    dockertoolbox
+    docker
     eclipse-java
     flycut
     font-hack
