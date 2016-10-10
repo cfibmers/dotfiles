@@ -11,33 +11,26 @@ apps=(
     ant
     archey
     aria2
-    asciinema --force-bottle
     automake
     bash-completion
     bats
     bazaar
-    brew-cask
     cf-cli
     consul
     coreutils
     ctags
-    direnv --force-bottle
     dnsmasq
-    docker-machine-driver-xhyve --without-docker-machine
     git
     git-duet
     gnu-tar
     gradle
     grc
-    grep --with-default-names
-    go --with-cc-common
     htop-osx
-    hugo --force-bottle
     iftop
     iperf
     jq
     kubernetes-cli
-    lftp
+    homebrew/boneyard/lftp # perhaps a temporary move?
     libtool
     lua
     maven
@@ -46,10 +39,8 @@ apps=(
     mysql
     ngrep
     nmap
-    node --without-completion
     openssl
     p7zip
-    packer --force-bottle
     pigz
     postgresql
     protobuf
@@ -68,13 +59,20 @@ apps=(
     the_silver_searcher
     tig
     vagrant-completion
-    vim --with-lua --override-system-vi
     watch
     wget
     xz
 )
 
 brew install "${apps[@]}"
+brew install direnv --force-bottle
+brew install docker-machine-driver-xhyve --without-docker-machine
+brew install grep --with-default-names
+brew install go --with-cc-common
+brew install hugo --force-bottle
+brew install node --without-completion
+brew install packer --force-bottle
+brew install vim --with-lua --override-system-vi
 
 sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve

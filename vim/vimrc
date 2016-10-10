@@ -147,7 +147,7 @@ set complete-=i                        " don't search included files for complet
 set completeopt-=preview               " disable preview window on completion
 set display+=lastline                  " display as much as possible of the last line
 set expandtab                          " use spaces instead of tabs in insert mode
-set foldmethod=syntax                  " syntax highlighting items specify folds
+set foldmethod=indent                  " syntax highlighting items specify folds
 set foldlevel=20                       " folds with a higher level than this will be closed
 set formatoptions+=r                   " insert the comment leader after enter in insert mode
 set guioptions+=c                      " use console dialogs instead of popups

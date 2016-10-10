@@ -1,7 +1,6 @@
 apps=(
     atom
     # colloquy
-    consul
     docker
     eclipse-java
     flycut

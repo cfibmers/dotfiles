@@ -18,6 +18,7 @@ On a sparkling fresh installation of OS X:
 ### Post-install
     Start shift-it and enable start at boot
     Start FlyCut and enable start at boot
+    Start Docker for Mac
     Alter accessibility features for ScreenHero
 
 ## Additional resources
