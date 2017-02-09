@@ -23,6 +23,7 @@ apps=(
     git
     git-duet
     gnu-tar
+    google-chrome
     gradle
     grc
     htop-osx
