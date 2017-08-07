@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Install bash-it
-. "$DOTFILES_DIR/install/bashit.sh"
-
 # Install Homebrew & brew-cask
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -27,4 +24,3 @@ brew install brew-cask
 . "$DOTFILES_DIR/install/spiff.sh"
 . "$DOTFILES_DIR/install/shiftit.sh"
 . "$DOTFILES_DIR/install/vagrant-plugins.sh"
-. "$DOTFILES_DIR/install/neobundle.sh"

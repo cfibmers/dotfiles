@@ -1,14 +1,18 @@
+let g:go_auto_type_info = 0
+let g:go_bin_path = expand("~/.gotools")
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
-let g:go_auto_type_info = 0
-let g:go_highlight_extra_types = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_functions = 0
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 0
 let g:go_snippet_engine = "neosnippet"
-let g:go_bin_path = expand("~/.gotools")
+
+" These options can influence rendering time
+" let g:go_highlight_functions = 1
+" let g:go_highlight_structs = 1
 
 if has("unix")
   let $PATH = g:go_bin_path . ':' . $PATH

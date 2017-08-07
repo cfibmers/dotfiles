@@ -30,7 +30,7 @@ NeoBundle 'tpope/vim-surround'                   " add/remove quotes, parents, b
 NeoBundle 'tpope/vim-repeat'                     " expanded `.` completion
 NeoBundle 'tpope/vim-fugitive'                   " git integration
 NeoBundle 'terryma/vim-multiple-cursors'         " sublime-like multiple cursors
-NeoBundle 'amdt/vim-niji', { 'stay_same' : 1 }   " rainbow parentheses - dead plugin
+NeoBundle 'losingkeys/vim-niji'                  " rainbow parentheses - dead plugin
 
 " search plugins
 NeoBundleLazy 'mileszs/ack.vim', {'autoload':{'commands':'Ack'}}
