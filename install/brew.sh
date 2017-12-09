@@ -8,7 +8,6 @@ brew upgrade
 
 apps=(
     ack
-    ant
     archey
     aria2
     automake
@@ -23,17 +22,15 @@ apps=(
     git
     git-duet
     gnu-tar
-    gradle
     grc
     htop-osx
     iftop
     iperf
     jq
     kubernetes-cli
-    homebrew/boneyard/lftp # perhaps a temporary move?
+    lftp
     libtool
     lua
-    maven
     mercurial
     moreutils
     mysql
