@@ -63,13 +63,9 @@ apps=(
 
 brew install "${apps[@]}"
 brew install direnv --force-bottle
-brew install docker-machine-driver-xhyve --without-docker-machine
 brew install grep --with-default-names
 brew install go --with-cc-common
 brew install hugo --force-bottle
 brew install node --without-completion
 brew install packer --force-bottle
 brew install vim --with-lua --override-system-vi
-
-sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
